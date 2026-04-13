@@ -27,62 +27,50 @@ app.use("/api/auth", authRoutes);
 
 
 
+const frontendPath = path.join(__dirname, "../frontend");
 
-app.use(express.static(path.join(__dirname, "../frontend")));
+// Serve static files
+app.use(express.static(frontendPath));
 
-
-////////////FOr ROOT 
+//////////// ROOT
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend", "index.html"));
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
-
-//////////// FOR PRODUCT
+//////////// PRODUCT
 app.get("/product", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "product.html"));
+  res.sendFile(path.join(frontendPath, "src/product.html"));
 });
 
-
-//////////// FOR CART
+//////////// CART
 app.get("/cart", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "cart.html"));
+  res.sendFile(path.join(frontendPath, "src/cart.html"));
 });
 
-
-//////////// FOR CHECKOUT
+//////////// CHECKOUT
 app.get("/checkout", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "checkout.html"));
+  res.sendFile(path.join(frontendPath, "src/checkout.html"));
 });
 
-
-//////////// FOR LOGIN
+//////////// LOGIN
 app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "login.html"));
+  res.sendFile(path.join(frontendPath, "src/login.html"));
 });
 
-
-//////////// FOR Contact
+//////////// CONTACT
 app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "contact.html"));
+  res.sendFile(path.join(frontendPath, "src/contact.html"));
 });
 
-
-//////////// FOR FAQ
+//////////// FAQ
 app.get("/faq", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "FAQ.html"));
+  res.sendFile(path.join(frontendPath, "src/faq.html"));
 });
 
-
-//////////// FOR PRODUCT
+//////////// ADMIN PANEL
 app.get("/adminPanel", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/src", "adminpanel.html"));
+  res.sendFile(path.join(frontendPath, "src/adminpanel.html"));
 });
-
-
-
-
-
-
 
 
 
