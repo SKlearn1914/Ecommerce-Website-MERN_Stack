@@ -25,6 +25,67 @@ const cartRoutes = require("./routes/cartRoutes");
 app.use("/api/cart", cartRoutes);
 app.use("/api/auth", authRoutes);
 
+
+
+
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+
+////////////FOr ROOT 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend", "index.html"));
+});
+
+
+//////////// FOR PRODUCT
+app.get("/product", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "product.html"));
+});
+
+
+//////////// FOR CART
+app.get("/cart", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "cart.html"));
+});
+
+
+//////////// FOR CHECKOUT
+app.get("/checkout", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "checkout.html"));
+});
+
+
+//////////// FOR LOGIN
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "login.html"));
+});
+
+
+//////////// FOR Contact
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "contact.html"));
+});
+
+
+//////////// FOR FAQ
+app.get("/faq", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "FAQ.html"));
+});
+
+
+//////////// FOR PRODUCT
+app.get("/adminPanel", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/src", "adminpanel.html"));
+});
+
+
+
+
+
+
+
+
+
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
